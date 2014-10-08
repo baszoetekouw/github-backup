@@ -11,11 +11,13 @@ GHBU_TYPE=${GHBU_TYPE:-org}
 # (if you're backing up a user's repos instead, this should be your GitHub username)
 GHBU_ORG=${GHBU_ORG:-"<CHANGE-ME>"}
 # the username of a GitHub account (to use with the GitHub API)
+# Instead of a username, yo can also put in an OAuth access key here
 GHBU_UNAME=${GHBU_UNAME:-"<CHANGE-ME>"}
-# the password for that account
-GHBU_PASSWD=${GHBU_PASSWD:-"<CHANGE-ME>"}
 # the GitHub hostname (see comments)
 GHBU_GITHOST=${GHBU_GITHOST:-"github.com"}
+# the password for that account (or empty if an OAuth access key is used)
+GHBU_PASSWD=${GHBU_PASSWD:-}
+
 # when `true`, old backups will be deleted
 GHBU_PRUNE_OLD=${GHBU_PRUNE_OLD:-true}
 # the min age (in days) of backup files to delete
