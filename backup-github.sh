@@ -21,7 +21,7 @@ GHBU_PASSWD=${GHBU_PASSWD:-}
 # when `true`, old backups will be deleted
 GHBU_PRUNE_OLD=${GHBU_PRUNE_OLD:-true}
 # the min age (in days) of backup files to delete
-GHBU_PRUNE_AFTER_N_DAYS=${GHBU_PRUNE_AFTER_N_DAYS:-3}
+GHBU_PRUNE_AFTER_N_DAYS=${GHBU_PRUNE_AFTER_N_DAYS:-7}
 # when `true`, only show error messages
 GHBU_SILENT=${GHBU_SILENT:-false}
 # base URI for the GitHub API
