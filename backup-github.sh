@@ -24,7 +24,7 @@ GHBU_SILENT=${GHBU_SILENT:-false}
 GHBU_API=${GHBU_API:-"https://api.github.com"}
 
 # base command to use to clone GitHub repos
-GHBU_GIT_CLONE_CMD="git clone --quiet --mirror git@${GHBU_GITHOST}:"
+GHBU_GIT_CLONE_CMD="git clone --quiet --mirror https://${GHBU_UNAME}:${GHBU_PASSWD}@{GHBU_GITHOST}:"
 
 TSTAMP=`date "+%Y%m%d-%H%M"`
 
