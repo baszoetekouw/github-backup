@@ -4,24 +4,24 @@
 # all of the following can be overriden by env variables:
 
 # where to place the backup files
-GHBU_BACKUP_DIR=${GHBU_BACKUP_DIR-"github-backups"}
+GHBU_BACKUP_DIR=${GHBU_BACKUP_DIR:-"github-backups"}
 # the GitHub organization whose repos will be backed up
 # (if you're backing up a user's repos instead, this should be your GitHub username)
-GHBU_ORG=${GHBU_ORG-"<CHANGE-ME>"}
+GHBU_ORG=${GHBU_ORG:-"<CHANGE-ME>"}
 # the username of a GitHub account (to use with the GitHub API)
-GHBU_UNAME=${GHBU_UNAME-"<CHANGE-ME>"}
+GHBU_UNAME=${GHBU_UNAME:-"<CHANGE-ME>"}
 # the password for that account
-GHBU_PASSWD=${GHBU_PASSWD-"<CHANGE-ME>"}
+GHBU_PASSWD=${GHBU_PASSWD:-"<CHANGE-ME>"}
 # the GitHub hostname (see comments)
-GHBU_GITHOST=${GHBU_GITHOST-"github.com"}
+GHBU_GITHOST=${GHBU_GITHOST:-"github.com"}
 # when `true`, old backups will be deleted
-GHBU_PRUNE_OLD=${GHBU_PRUNE_OLD-true}
+GHBU_PRUNE_OLD=${GHBU_PRUNE_OLD:-true}
 # the min age (in days) of backup files to delete
-GHBU_PRUNE_AFTER_N_DAYS=${GHBU_PRUNE_AFTER_N_DAYS-3}
+GHBU_PRUNE_AFTER_N_DAYS=${GHBU_PRUNE_AFTER_N_DAYS:-3}
 # when `true`, only show error messages
-GHBU_SILENT=${GHBU_SILENT-false}
+GHBU_SILENT=${GHBU_SILENT:-false}
 # base URI for the GitHub API
-GHBU_API=${GHBU_API-"https://api.github.com"}
+GHBU_API=${GHBU_API:-"https://api.github.com"}
 
 # base command to use to clone GitHub repos
 GHBU_GIT_CLONE_CMD="git clone --quiet --mirror git@${GHBU_GITHOST}:"
