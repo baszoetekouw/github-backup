@@ -30,7 +30,7 @@ GHBU_API=${GHBU_API:-"https://api.github.com"}
 # base command to use to clone GitHub repos
 GHBU_GIT_CLONE_CMD="git clone --quiet --mirror https://${GHBU_UNAME}:${GHBU_PASSWD}@${GHBU_GITHOST}/"
 
-TSTAMP=`date "+%Y%m%d-%H%M"`
+TSTAMP=`date "+%Y-%m-%dT%H:%M%z"`
 
 # The function `check` will exit the script if the given command fails.
 function check {
