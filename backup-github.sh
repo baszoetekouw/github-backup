@@ -74,19 +74,19 @@ for REPO in $REPOLIST
 do
 	$GHBU_SILENT || echo "Backing up ${GHBU_ORG}/${REPO}"
 	check ${GHBU_GIT_CLONE_CMD}${GHBU_ORG}/${REPO}.git \
-		${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}-${TSTAMP}.git \
-		&& tgz ${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}-${TSTAMP}.git
+		${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}_${TSTAMP}.git \
+		&& tgz ${GHBU_BACKUP_DIR} ${GHBU_ORG}-${REPO}_${TSTAMP}.git
 
 	$GHBU_SILENT || echo "Backing up ${GHBU_ORG}/${REPO}.wiki (if any)"
 	${GHBU_GIT_CLONE_CMD}${GHBU_ORG}/${REPO}.wiki.git \
-		${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}.wiki-${TSTAMP}.git 2>/dev/null \
-		&& tgz ${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}.wiki-${TSTAMP}.git
+		${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}.wiki_${TSTAMP}.git 2>/dev/null \
+		&& tgz ${GHBU_BACKUP_DIR} ${GHBU_ORG}-${REPO}.wiki_${TSTAMP}.git
 
 	$GHBU_SILENT || echo "Backing up ${GHBU_ORG}/${REPO} issues"
 	check curl --silent -u $GHBU_UNAME:$GHBU_PASSWD \
 		${GHBU_API}/repos/${GHBU_ORG}/${REPO}/issues \
-		-q > ${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}.issues-${TSTAMP} \
-		&& tgz ${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}.issues-${TSTAMP}
+		-q > ${GHBU_BACKUP_DIR}/${GHBU_ORG}-${REPO}.issues_${TSTAMP} \
+		&& tgz ${GHBU_BACKUP_DIR} ${GHBU_ORG}-${REPO}.issues_${TSTAMP}
 done
 
 if $GHBU_PRUNE_OLD
