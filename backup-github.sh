@@ -47,7 +47,7 @@ function check {
 
 # The function `tgz` will create a gzipped tar archive of the specified file ($1) and then remove the original
 function tgz {
-	check tar zcf $1.tar.gz $1 && check rm -rf $1
+	( check cd $1 && tar zcf $2.tar.gz $2 && check rm -rf $2 )
 }
 
 $GHBU_SILENT || (echo "" && echo "=== INITIALIZING ===" && echo "")
